@@ -1,0 +1,25 @@
+/* === Base === */
+* { font-family: sans-serif; }
+
+body {
+  background-color: #d6ecff; /* light blue */
+}
+
+/* === Element selectors from Page 2 === */
+header {
+  background-color: lightgreen;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* === Images === */
+img {
+  width: 50%;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
