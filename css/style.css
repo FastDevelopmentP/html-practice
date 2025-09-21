@@ -35,3 +35,28 @@ img {
   margin: 10px;
 }
 .button a { color: white; text-decoration: ivory; }
+
+.list {
+    font-size: 18px;
+    margin-left: 20px;
+    background-color:beige
+}
+
+.Achievemnts_List {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:dimgray;
+  color: greenyellow;
+}
+
+.Comparison_List {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:lightgray
+}
+
+.Paragraph {
+  font-size: 17px;
+  margin-left: 15px;
+  background-color:lightcyan
+}
