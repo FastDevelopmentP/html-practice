@@ -57,6 +57,125 @@ img {
 
 .Paragraph {
   font-size: 17px;
-  margin-left: 15px;
-  background-color:lightcyan
+  margin-left: 2px;
+  background-color:lightcyan;
 }
+
+#deadlift_main {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 5px solid black;
+}
+
+#deadlift_header {
+  font-size: 25px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+
+#deadlift_recap_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+
+#deadlift_recap_list {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:lightgray
+}
+
+#deadlift_footer {
+  font-size: 17px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+
+#boxing_main {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 5px solid black;
+}
+
+#boxing_header {
+  font-size: 25px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+
+#boxing_recap_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+
+#boxing_recap_list {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:lightgray
+}
+
+#boxing_footer {
+  font-size: 17px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+
+#comeback_main {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 5px solid black;
+}
+
+#comeback_header {
+  font-size: 25px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+#comeback_accomplishments_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+#comeback_accomplishments_list {
+  font-size: 18px;
+  margin-left: 20px;
+}
+#comeback_conclusion_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+#comeback_comparison_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+#comeback_comparison_list {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:lightgray
+}
+#comeback_progress_section {
+  font-size: 17px;
+  margin-left: 0px;
+  border: 3px solid black;
+}
+#comeback_progress_list {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color:lightgray
+}
+#comeback_footer {
+  font-size: 17px;
+  margin-left: 0px;
+  background-color:lightgreen;
+  text-align: center;
+}
+
+/* === Class selectors from Page 3 === */
