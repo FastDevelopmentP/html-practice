@@ -152,25 +152,23 @@ img {
   border: 3px solid black;
 }
 #comeback_comparison_section {
+  display:flex;
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
-#comeback_comparison_list {
+
+#comeback_comparison_list, #comeback_progess_list {
+  flex:1;
   font-size: 18px;
-  margin-left: 20px;
-  background-color:lightgray
 }
+
 #comeback_progress_section {
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
-#comeback_progress_list {
-  font-size: 18px;
-  margin-left: 20px;
-  background-color:lightgray
-}
+
 #comeback_footer {
   font-size: 17px;
   margin-left: 0px;
