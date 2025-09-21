@@ -1,29 +1,40 @@
+/* ============================================================================
+   Global Styles (shared across all pages)
+   - Comments explain purpose of each block/selector.
+   ========================================================================== */
+
 /* === Base === */
+/* Applies a sans-serif font to all elements */
 * { font-family: sans-serif; }
 
+/* Page background for all pages */
 body {
   background-color: #d6ecff; /* light blue */
 }
 
 /* === Element selectors from Page 2 === */
+/* Styles ALL <header> elements. You also have page-specific header IDs below. */
 header {
   background-color: lightgreen;
   text-align: center;
 }
 
+/* Larger size for h3 headings globally */
 h3 {
   font-size: 30px;
   text-align: center;
 }
 
 /* === Images === */
+/* Consistent image sizing and centering with rounded corners */
 img {
-  width: 50%;
+  width: 55%;
   border-radius: 8px;
   display: block;
   margin: auto;
 }
 
+/* Button-like look for any element with class="button" */
 .button {
   background-color: black;
   color: white;
@@ -34,14 +45,17 @@ img {
   display: inline-block;
   margin: 10px;
 }
+/* Ensures links inside .button are styled for contrast */
 .button a { color: white; text-decoration: ivory; }
 
+/* Simple list style for recap/summary lists */
 .list {
     font-size: 18px;
     margin-left: 20px;
-    background-color:beige
+    background-color:beige;
 }
 
+/* Achievements list (Page 3) with dark background and bright text */
 .Achievemnts_List {
   font-size: 18px;
   margin-left: 20px;
@@ -49,24 +63,32 @@ img {
   color: greenyellow;
 }
 
+/* Comparison lists (Page 3) */
 .Comparison_List {
   font-size: 18px;
   margin-left: 20px;
-  background-color:lightgray
+  background-color:lightgray;
 }
 
+/* Shared paragraph formatting when class="Paragraph" is used */
 .Paragraph {
   font-size: 17px;
   margin-left: 2px;
   background-color:lightcyan;
 }
 
+/* ============================================================================
+   Page 1: Deadlift Dispute (IDs for page-scoped styling)
+   ========================================================================== */
+
+/* Wraps the main content area of Page 1 */
 #deadlift_main {
   font-size: 17px;
   margin-left: 0px;
   border: 5px solid black;
 }
 
+/* Header styling specifically for Page 1 */
 #deadlift_header {
   font-size: 25px;
   margin-left: 0px;
@@ -74,24 +96,31 @@ img {
   text-align: center;
 }
 
+/* Recap section box on Page 1 */
 #deadlift_recap_section {
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
 
+/* Recap list styling on Page 1 */
 #deadlift_recap_list {
   font-size: 18px;
   margin-left: 20px;
-  background-color:lightgray
+  background-color:lightgray;
 }
 
+/* Footer bar styles for Page 1 */
 #deadlift_footer {
   font-size: 17px;
   margin-left: 0px;
   background-color:lightgreen;
   text-align: center;
 }
+
+/* ============================================================================
+   Page 2: Boxing Chapter (IDs for page-scoped styling)
+   ========================================================================== */
 
 #boxing_main {
   font-size: 17px;
@@ -115,7 +144,7 @@ img {
 #boxing_recap_list {
   font-size: 18px;
   margin-left: 20px;
-  background-color:lightgray
+  background-color:lightgray;
 }
 
 #boxing_footer {
@@ -124,6 +153,10 @@ img {
   background-color:lightgreen;
   text-align: center;
 }
+
+/* ============================================================================
+   Page 3: Thor’s Comeback (IDs for page-scoped styling)
+   ========================================================================== */
 
 #comeback_main {
   font-size: 17px;
@@ -137,20 +170,26 @@ img {
   background-color:lightgreen;
   text-align: center;
 }
+
 #comeback_accomplishments_section {
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
+
+/* Accomplishments list styles (Page 3) */
 #comeback_accomplishments_list {
   font-size: 18px;
   margin-left: 20px;
 }
+
 #comeback_conclusion_section {
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
+
+/* Side-by-side layout for comparison section on Page 3 */
 #comeback_comparison_section {
   display:flex;
   font-size: 17px;
@@ -158,17 +197,20 @@ img {
   border: 3px solid black;
 }
 
-#comeback_comparison_list, #comeback_progess_list {
+/* Individual comparison lists inside the flex container */
+#comeback_comparison_list, #comeback_progress_list {
   flex:1;
   font-size: 18px;
 }
 
+/* Styles for the progress section/container */
 #comeback_progress_section {
   font-size: 17px;
   margin-left: 0px;
   border: 3px solid black;
 }
 
+/* Footer bar styles for Page 3 */
 #comeback_footer {
   font-size: 17px;
   margin-left: 0px;
