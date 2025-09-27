@@ -237,3 +237,48 @@ img {
 }
 
 /* === Class selectors from Page 3 === */
+
+/* ============================================================================
+   Responsive Media Queries
+   ========================================================================== */
+
+/* --- Phone widths and smaller (<= 600px) --- */
+@media (max-width: 600px) {
+  /* === General readability === */
+  body {
+    font-size: 16px;       /* keep text large enough without zooming */
+  }
+
+  /* === Page 3: Comparison Flexbox === */
+  #comeback_comparison_section {
+    flex-direction: column;  /* stack instead of side-by-side */
+    align-items: center;     /* center the lists for balance */
+    gap: 12px;               /* space between stacked items */
+  }
+
+  /* Optional: shrink borders so they don’t dominate small screens */
+  #deadlift_main,
+  #boxing_main,
+  #comeback_main,
+  #deadlift_recap_section,
+  #boxing_recap_section,
+  #comeback_accomplishments_section,
+  #comeback_conclusion_section,
+  #comeback_progress_section,
+  #comeback_comparison_section {
+    border-width: 2px;
+  }
+
+  /* Optional: scale down header font */
+  #deadlift_header,
+  #boxing_header,
+  #comeback_header {
+    font-size: 20px;
+  }
+
+  /* Make images fill the smaller screen nicely */
+  img {
+    width: 100%;
+  }
+}
+
