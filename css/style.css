@@ -10,14 +10,11 @@ background-color: #d6ecff; /* light blue */}
 
 /* === Element selectors from Page 2 === */
 /* Styles ALL <header> elements. You also have page-specific header IDs below. */
- /* make headers a positioning context for the absolute button */
-header {
-  background-color: lightgreen;
-  /* comment out text-align to use Bootstrap class in HTML */
-  /* text-align: center; */ 
-  padding: 7px;
-  position: relative; /* <-- add this line */
-}
+ /* deleted redundant header rule */
+
+#deadlift_header { background-color: lightgreen; }
+#boxing_header   { background-color: lightgreen; }
+#comeback_header { background-color: lightgreen; }
 
 /* Deleted css for home button, replaced with bootstrap */
 
@@ -37,19 +34,8 @@ img {
   margin: auto;
 }
 
-/* Button-like look for any element with class="button" */
-.button {
-  background-color: black;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  display: inline-block;
-  margin: 10px;
-}
-/* Ensures links inside .button are styled for contrast */
-.button a { color: white; text-decoration: ivory; }
+/* Deleted uneeded Button-like look for any element with class="button" */
+
 
 /* Simple list style for recap/summary lists */
 .list {
@@ -85,16 +71,20 @@ img {
    ========================================================================== */
 
 /* Wraps the main content area of Page 1 */
-#deadlift_main {
+/* Page 1: tighten the black border to the content */
+#deadlift_main { 
+  border: 0;               /* remove the wide border */
+}
+
+#deadlift_main > .container {
   font-size: 17px;
-  margin-left: 0px;
-  border: 5px solid black;
+  border: 5px solid black;  /* add the tight border */
+  border-radius: .5rem;    /* match other pages */
+  padding: 1rem;           /* breathing room inside the border */
 }
 
 /* Header styling specifically for Page 1 */
 #deadlift_header {
-  font-size: 25px;
-  margin-left: 0px;
   background-color:lightgreen;
   /* redundant text-align: center; */
 }
@@ -102,21 +92,18 @@ img {
 /* Recap section box on Page 1 */
 #deadlift_recap_section {
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
 /* Recap list styling on Page 1 */
 #deadlift_recap_list {
   font-size: 18px;
-  margin-left: 20px;
   background-color:lightgray;
 }
 
 /* Footer bar styles for Page 1 */
 #deadlift_footer {
   font-size: 17px;
-  margin-left: 0px;
   background-color:lightgreen;
   text-align: center;
 }
@@ -127,32 +114,28 @@ img {
 
 #boxing_main {
   font-size: 17px;
-  margin-left: 0px;
   border: 5px solid black;
+  border-radius: .5rem;    /* match other pages */
+  padding: 1rem;
 }
 
 #boxing_header {
-  font-size: 25px;
-  margin-left: 0px;
   background-color:lightgreen;
   /* redundant text-align: center; */
 }
 
 #boxing_recap_section {
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
 #boxing_recap_list {
   font-size: 18px;
-  margin-left: 20px;
   background-color:lightgray;
 }
 
 #boxing_footer {
   font-size: 17px;
-  margin-left: 0px;
   background-color:lightgreen;
   text-align: center;
 }
@@ -163,20 +146,18 @@ img {
 
 #comeback_main {
   font-size: 17px;
-  margin-left: 0px;
   border: 5px solid black;
+  border-radius: .5rem;    /* match other pages */
+  padding: 1rem;
 }
 
 #comeback_header {
-  font-size: 25px;
-  margin-left: 0px;
   background-color:lightgreen;
   /* redundant text-align: center; */
 }
 
 #comeback_accomplishments_section {
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
@@ -188,7 +169,6 @@ img {
 
 #comeback_conclusion_section {
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
@@ -196,7 +176,6 @@ img {
 #comeback_comparison_section {
   display:flex;
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
@@ -209,14 +188,12 @@ img {
 /* Styles for the progress section/container */
 #comeback_progress_section {
   font-size: 17px;
-  margin-left: 0px;
   border: 3px solid black;
 }
 
 /* Footer bar styles for Page 3 */
 #comeback_footer {
   font-size: 17px;
-  margin-left: 0px;
   background-color:lightgreen;
   text-align: center;
 }
