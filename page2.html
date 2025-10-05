@@ -14,8 +14,8 @@
     crossorigin="anonymous"
   />
 
-  <!-- Your custom styles (loads after Bootstrap so you can override) -->
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- Your custom styles (loads after Bootstrap so I can override) -->
+  <link rel="stylesheet" href="css/style.css">
 
 
   <!-- tiny blank favicon to silence 404 -->
@@ -24,11 +24,15 @@
 <body>
   <div class="container mt-4">
     <main id="boxing_main">
-      <header id="boxing_header">
-        <a class="header-home" href="./index.html" aria-label="Go to homepage">Home</a>
-        <!-- employing two different headers for different size font so each paragraph
-        and topic stands out -->
-        <h1 class="text-center my-4">Eddie Hall vs Hafthor Björnsson — The Boxing Chapter</h1>
+      <header id="deadlift_header"
+            class="position-relative d-flex justify-content-center align-items-center py-3 ps-5 pe-5">
+          <a href="./index.html"
+            class="btn btn-dark text-white position-absolute top-0 start-0 mt-2 ms-3 px-3 py-2"
+            aria-label="Go to homepage">Home</a>
+
+          <h1 class="my-0 text-center">
+            Eddie Hall vs Hafthor Björnsson — The Boxing Chapter
+          </h1>
       </header>
 
       <!-- Section describing the feud escalation and fight announcement -->

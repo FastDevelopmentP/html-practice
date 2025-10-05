@@ -4,37 +4,22 @@
    ========================================================================== */
 
 /* === Base === */
-/* Applies a sans-serif font to all elements */
-* { font-family: sans-serif; }
-
-/* Page background for all pages */
-body {
-  background-color: #d6ecff; /* light blue */
-}
+/* adding my style of font */
+body { font-family: sans-serif; 
+background-color: #d6ecff; /* light blue */}
 
 /* === Element selectors from Page 2 === */
 /* Styles ALL <header> elements. You also have page-specific header IDs below. */
  /* make headers a positioning context for the absolute button */
 header {
   background-color: lightgreen;
-  text-align: center;
-  padding: 8px;
+  /* comment out text-align to use Bootstrap class in HTML */
+  /* text-align: center; */ 
+  padding: 7px;
   position: relative; /* <-- add this line */
 }
 
-/* small home button that sits in the header’s top-right corner */
-.header-home {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 8px 12px;
-  font-size: 18px;
-  line-height: 1;
-  text-decoration: none;
-  background: black;
-  color: white;
-  border-radius: 6px;
-}
+/* Deleted css for home button, replaced with bootstrap */
 
 
 /* Larger size for h3 headings globally */
@@ -111,7 +96,7 @@ img {
   font-size: 25px;
   margin-left: 0px;
   background-color:lightgreen;
-  text-align: center;
+  /* redundant text-align: center; */
 }
 
 /* Recap section box on Page 1 */
@@ -150,7 +135,7 @@ img {
   font-size: 25px;
   margin-left: 0px;
   background-color:lightgreen;
-  text-align: center;
+  /* redundant text-align: center; */
 }
 
 #boxing_recap_section {
@@ -186,7 +171,7 @@ img {
   font-size: 25px;
   margin-left: 0px;
   background-color:lightgreen;
-  text-align: center;
+  /* redundant text-align: center; */
 }
 
 #comeback_accomplishments_section {
