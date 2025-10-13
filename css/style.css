@@ -314,83 +314,94 @@ img {
 }
 */
 
-/* ==================== Mobile header fix: stop overlap, improve fit ==================== */
-@media (max-width: 600px) {
-  /* Tighter header padding on small screens */
-  #deadlift_header,
-  #boxing_header,
-  #comeback_header {
-    padding: .75rem 1rem !important;
-  }
-
-  /* Make the Home button stop being absolutely positioned on phones.
-     It stacks above the title, aligns left, and is smaller. */
-  #deadlift_header > a,
-  #boxing_header > a,
-  #comeback_header > a {
-    position: static !important;     /* undo position-absolute */
-    margin: 0 0 .5rem 0 !important;  /* put some space below the button */
-    padding: .25rem .5rem !important;/* smaller tap target but still usable */
-    font-size: .875rem !important;   /* ~14px */
-    line-height: 1.1;
-  }
-
-  /* Scale the big H1 down on phones and tighten line-height */
-  #deadlift_header h1,
-  #boxing_header h1,
-  #comeback_header h1 {
-    font-size: clamp(1.05rem, 5.2vw, 1.5rem) !important; /* responsive cap */
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-    padding: 0;
-    word-break: keep-all;
-  }
-
-  /* Optional: nudge overall text size a hair smaller on phones */
-  body {
-    font-size: 15px;
-  }
-
-  /* Optional: reduce top margin so content appears sooner on small screens */
-  .container.mt-4 {
-    margin-top: 1rem !important;
-  }
-}
-
-/* ==================== MOBILE HEADER FIX (Galaxy-size and smaller) ==================== */
+/* ====== Phones & phablets (Samsung S-series included) ====== */
 @media (max-width: 650px) {
-  /* Stack header contents and tighten padding */
+  /* Stack header contents and tighten spacing */
   #deadlift_header,
   #boxing_header,
   #comeback_header {
+    position: relative;              /* containing block for any abs children */
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem 1rem;
+    gap: .5rem;
+    padding: .5rem 1rem !important;
   }
 
   /* Let the Home button flow above the title (no overlap) */
   #deadlift_header > a,
   #boxing_header > a,
   #comeback_header > a {
-    position: static !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0.25rem 0.75rem !important;
-    font-size: 0.85rem !important;
+    position: static !important;     /* undo position-absolute on small screens */
+    margin-bottom: .5rem !important;
+    padding: .35rem .75rem !important;
+    font-size: .9rem !important;
     line-height: 1.2;
+    z-index: 1;
+    align-self: flex-start;          /* left-align above title */
   }
 
-  /* Scale the big H1 to fit small screens */
+  /* Make big H1 fit comfortably on narrow screens */
   #deadlift_header h1,
   #boxing_header h1,
   #comeback_header h1 {
-    font-size: clamp(1rem, 5vw, 1.4rem);
+    font-size: clamp(1.05rem, 4.6vw, 1.55rem) !important;
     line-height: 1.2;
     margin: 0;
     text-align: center;
     word-break: keep-all;
   }
 
-  /* Slightly smaller base text on phones */
+  /* Slightly smaller base text + earlier content */
   body { font-size: 15px; }
+  .container.mt-4 { margin-top: 1rem !important; }
 }
+
+/* ====== Extra-tight iPhone widths (SE → Pro/Max portrait) ====== */
+/* This sits AFTER the 650px block so it overrides on iPhones */
+@media (max-width: 430px) {
+  #deadlift_header,
+  #boxing_header,
+  #comeback_header {
+    /* add notch-safe top padding on iOS; harmless elsewhere */
+    padding: calc(.5rem + env(safe-area-inset-top, 0px)) 1rem .5rem 1rem !important;
+  }
+
+  /* Fully clear any lingering absolute offsets/transforms from desktop */
+  #deadlift_header > a,
+  #boxing_header > a,
+  #comeback_header > a {
+    inset: auto !important;          /* clears top/right/bottom/left if they exist */
+    transform: none !important;      /* clears any translate */
+    margin: 0 0 .25rem 0 !important;
+    font-size: .875rem !important;
+  }
+
+  #deadlift_header h1,
+  #boxing_header h1,
+  #comeback_header h1 {
+    font-size: clamp(1rem, 5vw, 1.35rem) !important;
+    overflow-wrap: anywhere;         /* last-resort wrapping on very small widths */
+  }
+}
+
+/* iOS Safari quirk fix: prevent unexpected auto-zooming */
+@supports (-webkit-touch-callout: none) {
+  html { -webkit-text-size-adjust: 100%; }
+}
+
+/* fixing the image width by letting two columns form until it's too tight, then stack */
+.compare-pics > img {
+  flex: 1 1 clamp(220px, 47%, 420px); /* flexible basis with a sensible min/max */
+  max-width: 100%;
+  height: auto;
+}
+
+/* On very narrow phones, force stacking */
+@media (max-width: 430px) {
+  .compare-pics > img { flex-basis: 100%; }
+}
+
+/* ============================================================================
+   END OF CSS
+   ========================================================================== */
