@@ -390,17 +390,6 @@ img {
   html { -webkit-text-size-adjust: 100%; }
 }
 
-/* fixing the image width by letting two columns form until it's too tight, then stack */
-.compare-pics > img {
-  flex: 1 1 clamp(220px, 47%, 420px); /* flexible basis with a sensible min/max */
-  max-width: 100%;
-  height: auto;
-}
-
-/* On very narrow phones, force stacking */
-@media (max-width: 430px) {
-  .compare-pics > img { flex-basis: 100%; }
-}
 
 /* ============================================================================
    END OF CSS
