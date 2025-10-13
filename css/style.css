@@ -1,224 +1,282 @@
 /* ============================================================================
-   Global Styles (shared across all pages)
-   - Comments explain purpose of each block/selector.
+   THEME & GLOBAL BASE
+   - We use CSS variables so I can tweak colors in one place.
    ========================================================================== */
 
-/* === Base === */
-/* adding my style of font */
-body { font-family: sans-serif; 
-background-color: #d6ecff; /* light blue */}
+:root{
+  /* Calm, cohesive palette (replaces the earlier bright greens/beiges) */
+  --page-bg:       #f6f8fb;  /* soft neutral page background */
+  --header-bg:     #eaf2ff;  /* gentle header tint */
+  --panel-bg:      #ffffff;  /* white card/panel background */
+  --panel-border:  #d0d7de;  /* soft gray border line */
+  --accent:        #0d6efd;  /* Bootstrap Primary for buttons/links */
+  --contrast:      #f4f7ff;  /* very light striping for card headers */
+  --text:          #1f2937;  /* slate text color for legibility */
+}
 
-/* === Element selectors from Page 2 === */
-/* Styles ALL <header> elements. You also have page-specific header IDs below. */
- /* deleted redundant header rule */
+html, body { height: 100%; }
 
-#deadlift_header { background-color: lightgreen; }
-#boxing_header   { background-color: lightgreen; }
-#comeback_header { background-color: lightgreen; }
+body {
+  /* System font stack for crisp rendering on all platforms */
+  font-family:
+    system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif;
 
-/* Deleted css for home button, replaced with bootstrap */
+  background-color: var(--page-bg);
+  color: var(--text);
+}
 
+/* ============================================================================
+   HEADERS (shared across pages)
+   - NOTE: In the updated HTML, each page uses the correct header ID.
+   ========================================================================== */
 
-/* Larger size for h3 headings globally */
+#deadlift_header,
+#boxing_header,
+#comeback_header {
+  background-color: var(--header-bg); /* softer than the prior bright green */
+  border: 1px solid var(--panel-border);
+  border-radius: .5rem;
+  /* text-align was previously redundant due to Bootstrap centering */
+}
+
+/* ============================================================================
+   TYPOGRAPHY & IMAGES
+   ========================================================================== */
+
+/* global h3 size/alignment */
 h3 {
   font-size: 30px;
   text-align: center;
 }
 
-/* === Images === */
-/* Consistent image sizing and centering with rounded corners */
+/* Images:
+   - In the updated HTML I use .img-fluid so images scale responsively.
+   - I keep corners/centering here; intentionally DO NOT set a fixed width
+     so Bootstrap can handle sizing for phones, tablets, and desktops.
+   - To recover old behavior, uncomment the width line. */
 img {
-  width: 55%;
+  /* width: 55%;  /* (original) fixed width — intentionally disabled */
   border-radius: 8px;
   display: block;
   margin: auto;
 }
 
-/* Deleted uneeded Button-like look for any element with class="button" */
+/* ============================================================================
+   LISTS & PARAGRAPH BLOCKS
+   - I keep original classes and also add the new ones used on Page 3.
+   ========================================================================== */
 
-
-/* Simple list style for recap/summary lists */
+/* Simple recap list */
 .list {
-    font-size: 18px;
-    margin-left: 20px;
-    background-color:beige;
-}
-
-/* Achievements list (Page 3) with dark background and bright text */
-.Achievemnts_List {
   font-size: 18px;
   margin-left: 20px;
-  background-color:dimgray;
-  color: greenyellow;
+  background-color: #f3f4f6; /* subtle gray instead of beige */
+  border-radius: .375rem;
+  padding: .5rem .75rem;
 }
 
-/* Comparison lists (Page 3) */
+.Achievemnts_List {
+  /* This is preserved for backward compatibility, but the site now uses
+     .achievements-list.
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: #1f2937; /* dim dark */
+  color: #e5f0ff;
+  border-radius: .375rem;
+  padding: .5rem .75rem;
+}
+
+/* NEW preferred class name (used in updated HTML on Page 3) */
+.achievements-list {
+  font-size: 18px;
+  margin-left: 20px;
+  background: linear-gradient(180deg, #111827, #1f2937); /* tasteful dark gradient */
+  color: #e5f0ff;
+  border-radius: .375rem;
+  padding: .5rem .75rem;
+}
+
+/* Original comparison list class (kept even though Page 3 now uses cards) */
 .Comparison_List {
   font-size: 18px;
   margin-left: 20px;
-  background-color:lightgray;
+  background-color: lightgray; /* original look retained if used elsewhere */
+  /* With the new card layout, this is not used in the Direct Comparison,
+     but kept it to keep the ID/class map familiar. */
 }
 
-/* Shared paragraph formatting when class="Paragraph" is used */
+/* Comparison list items used inside the new cards */
+.comparison-list { font-size: 18px; }
+
+/* Ordered progress list gets Bootstrap list-group look; I keep the background light. */
+.progress-list .list-group-item { background-color: var(--panel-bg); }
+
+/* Shared paragraph style */
 .Paragraph {
   font-size: 17px;
   margin-left: 2px;
-  background-color:lightcyan;
+  background-color: #eef9ff;  /* very light cyan tint for readability */
+  border: 1px solid #dceef9;
+  border-radius: .375rem;
+  padding: .5rem .75rem;
+}
+
+/* Utility: panel background/border used to group sections cleanly */
+.bg-panel {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: .5rem; /* small rounding to match headers/panels */
 }
 
 /* ============================================================================
-   Page 1: Deadlift Dispute (IDs for page-scoped styling)
+   PAGE 1: Deadlift Dispute (index.html)
+   - Preserved “tight border around content” look via the child selector.
    ========================================================================== */
 
-/* Wraps the main content area of Page 1 */
-/* Page 1: tighten the black border to the content */
-#deadlift_main { 
-  border: 0;               /* remove the wide border */
-}
+/* Remove outer border; inner .container gets the frame */
+#deadlift_main { border: 0; }
 
+/* This selector applies the neat black-ish frame closely around the content */
 #deadlift_main > .container {
   font-size: 17px;
-  border: 5px solid black;  /* add the tight border */
-  border-radius: .5rem;    /* match other pages */
-  padding: 1rem;           /* breathing room inside the border */
+  border: 1px solid var(--panel-border); /* previously 5px solid black */
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: var(--panel-bg);
 }
 
-/* Header styling specifically for Page 1 */
-#deadlift_header {
-  background-color:lightgreen;
-  /* redundant text-align: center; */
-}
-
-/* Recap section box on Page 1 */
+/* Recap panel retains a light border (softer than solid black) */
 #deadlift_recap_section {
   font-size: 17px;
-  border: 3px solid black;
+  border: 1px solid var(--panel-border);
 }
 
-/* Recap list styling on Page 1 */
-#deadlift_recap_list {
-  font-size: 18px;
-  background-color:lightgray;
-}
+/* Recap list text size preserved; background now controlled by .list class */
+#deadlift_recap_list { font-size: 18px; }
 
-/* Footer bar styles for Page 1 */
+/* Footer simplified to transparent background; buttons provide visual weight */
 #deadlift_footer {
   font-size: 17px;
-  background-color:lightgreen;
+  background-color: transparent; /* was lightgreen; I change to meet the request for calmer colors */
   text-align: center;
 }
 
 /* ============================================================================
-   Page 2: Boxing Chapter (IDs for page-scoped styling)
+   PAGE 2: Boxing Chapter (page2.html)
    ========================================================================== */
 
 #boxing_main {
   font-size: 17px;
-  border: 5px solid black;
-  border-radius: .5rem;    /* match other pages */
+  border: 1px solid var(--panel-border);  /* previously 5px solid black */
+  border-radius: .5rem;                   /* matches other pages */
   padding: 1rem;
+  background-color: var(--panel-bg);
 }
 
-#boxing_header {
-  background-color:lightgreen;
-  /* redundant text-align: center; */
-}
+/* Header coloration handled by shared header rule (above).
+   Kept here to show the original structure without re-defining it. */
+/* #boxing_header { background-color: lightgreen; } */
 
 #boxing_recap_section {
   font-size: 17px;
-  border: 3px solid black;
+  border: 1px solid var(--panel-border); /* previously 3px solid black */
 }
 
 #boxing_recap_list {
   font-size: 18px;
-  background-color:lightgray;
+  /* background-color now from .list class for consistency */
 }
 
 #boxing_footer {
   font-size: 17px;
-  background-color:lightgreen;
+  background-color: transparent;
   text-align: center;
 }
 
 /* ============================================================================
-   Page 3: Thor’s Comeback (IDs for page-scoped styling)
+   PAGE 3: Thor’s Comeback (page3.html)
+   - TWO approaches are retained:
+     (A) My original flexbox layout (commented but kept),
+     (B) The new card layout (active) for readability.
    ========================================================================== */
 
 #comeback_main {
   font-size: 17px;
-  border: 5px solid black;
-  border-radius: .5rem;    /* match other pages */
+  border: 1px solid var(--panel-border);  /* previously 5px solid black */
+  border-radius: .5rem;
   padding: 1rem;
+  background-color: var(--panel-bg);
 }
 
-#comeback_header {
-  background-color:lightgreen;
-  /* redundant text-align: center; */
-}
-
-#comeback_accomplishments_section {
+/* Section borders kept light and consistent */
+#comeback_accomplishments_section,
+#comeback_conclusion_section {
   font-size: 17px;
-  border: 3px solid black;
+  border: 1px solid var(--panel-border); /* previously 3px solid black */
 }
 
-/* Accomplishments list styles (Page 3) */
+/* NEW CARD LAYOUT (active):
+   - The Direct Comparison now uses Bootstrap cards (see page3.html).
+   - These headers get a subtle striping to separate them from card bodies. */
+#comeback_comparison_section .card-header.bg-contrast {
+  background-color: var(--contrast);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+/* Improve bullet spacing in card bodies */
+#comeback_comparison_section .card-body li + li {
+  margin-top: .35rem;
+}
+
+/* Footer matches other pages */
+#comeback_footer {
+  font-size: 17px;
+  background-color: transparent;
+  text-align: center;
+}
+
+/* ORIGINAL FLEX LAYOUT (kept for reference; not used by the new cards) */
+/*
+#comeback_comparison_section {
+  display:flex;
+  font-size: 17px;
+  border: 3px solid black;   // original heavy border
+}
+#comeback_comparison_list, #comeback_progress_list {
+  flex:1;
+  font-size: 18px;
+}
+#comeback_progress_section {
+  font-size: 17px;
+  border: 3px solid black;   // original heavy border
+}
+*/
+
+/* Keep the original accomplishments ID list sizing */
 #comeback_accomplishments_list {
   font-size: 18px;
   margin-left: 20px;
 }
 
-#comeback_conclusion_section {
-  font-size: 17px;
-  border: 3px solid black;
-}
-
-/* Side-by-side layout for comparison section on Page 3 */
-#comeback_comparison_section {
-  display:flex;
-  font-size: 17px;
-  border: 3px solid black;
-}
-
-/* Individual comparison lists inside the flex container */
-#comeback_comparison_list, #comeback_progress_list {
-  flex:1;
-  font-size: 18px;
-}
-
-/* Styles for the progress section/container */
-#comeback_progress_section {
-  font-size: 17px;
-  border: 3px solid black;
-}
-
-/* Footer bar styles for Page 3 */
-#comeback_footer {
-  font-size: 17px;
-  background-color:lightgreen;
-  text-align: center;
-}
-
-/* === Class selectors from Page 3 === */
-
 /* ============================================================================
-   Responsive Media Queries
+   RESPONSIVE MEDIA QUERIES
+   - Phone widths and smaller (<= 600px)
+   - Kept the original intent (stack items, slim borders, sensible font).
    ========================================================================== */
 
-/* --- Phone widths and smaller (<= 600px) --- */
 @media (max-width: 600px) {
-  /* === General readability === */
+  /* Base font a touch larger for readability on small screens */
   body {
-    font-size: 16px;       /* keep text large enough without zooming */
+    font-size: 16px;
   }
 
-  /* === Page 3: Comparison Flexbox === */
-  #comeback_comparison_section {
-    flex-direction: column;  /* stack instead of side-by-side */
-    align-items: center;     /* center the lists for balance */
-    gap: 12px;               /* space between stacked items */
-  }
+  /* NEW CARD layout already stacks via the Bootstrap grid.
+     Add a little inline margin breathing room. */
+  #comeback_comparison_section .card { margin-inline: .25rem; }
 
-  /* Optional: shrink borders so they don’t dominate small screens */
+  /* Shrink border thickness so it does not dominate */
   #deadlift_main,
   #boxing_main,
   #comeback_main,
@@ -226,21 +284,32 @@ img {
   #boxing_recap_section,
   #comeback_accomplishments_section,
   #comeback_conclusion_section,
+  /* kept legacy selectors even if not currently used: */
   #comeback_progress_section,
   #comeback_comparison_section {
-    border-width: 2px;
+    border-width: 1px; /* lighter than 2–3px on small screens */
   }
 
-  /* Optional: scale down header font */
+  /* Optional: scale down header font modestly */
   #deadlift_header,
   #boxing_header,
   #comeback_header {
     font-size: 20px;
   }
 
-  /* Make images fill the smaller screen nicely */
-  img {
-    width: 100%;
-  }
+  /* Make images fill narrow screens nicely (Bootstrap .img-fluid already helps) */
+  /* If the global img is uncommented, this ensures full width:
+  img { width: 100%; }
+  */
 }
 
+/* ============================================================================
+   OPTIONAL: ACCESSIBILITY ADJUSTMENTS
+   - Uncomment if to get a focus ring on keyboard navigation.
+   ========================================================================== */
+/*
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+*/

@@ -1,95 +1,130 @@
 <!DOCTYPE html>
-<!-- opening html tag -->
-<html>
+<html lang="en"> <!-- Helps screen readers and search engines -->
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title class="text-center my-4">Thor’s Comeback and the Final Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Ensure proper scaling on mobile -->
+  <title>Thor’s Comeback and the Final Records</title>
 
-  <!-- Bootstrap 5.3.8 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous"
-  />
-
-  <!-- Your custom styles (loads after Bootstrap so I can override) -->
+  <!-- CSS assets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">
-
-
-  <!-- tiny blank favicon to silence 404 -->
   <link rel="icon" href="data:,">
 </head>
 <body>
   <div class="container mt-4">
-    <main id="comeback_main">
-      <header id="deadlift_header"
-            class="position-relative d-flex justify-content-center align-items-center py-3 ps-5 pe-5">
-          <a href="./index.html"
-            class="btn btn-dark text-white position-absolute top-0 start-0 mt-2 ms-3 px-3 py-2"
-            aria-label="Go to homepage">Home</a>
+    <main id="comeback_main"> <!-- Page-scoped wrapper with light panel styling -->
+      <header id="comeback_header"
+              class="position-relative d-flex justify-content-center align-items-center py-3 ps-5 pe-5">
+        <!-- Global nav: Home -->
+        <a href="./index.html"
+           class="btn btn-dark text-white position-absolute top-0 start-0 mt-2 ms-3 px-3 py-2"
+           aria-label="Go to homepage">Home</a>
 
-          <h1 class="my-0 text-center">
-            Thor’s Comeback and the Final Deadlift Records
-          </h1>
+        <h1 class="my-0 text-center">
+          Thor’s Comeback and the Final Deadlift Records
+        </h1>
       </header>
 
+      <!-- Content blocks preserved as-is, now with explanatory comments -->
       <h2>Thor’s Comeback After Boxing</h2>
-      <p class="Paragraph">After slimming down for his boxing fight with Eddie Hall, Thor weighed nearly 100 pounds less than his strongman prime. Many assumed his strength career was finished. Instead, he rebuilt himself smarter: he returned to heavy pulling while keeping the conditioning, mobility, and discipline from boxing. By age 36, Thor had not only regained his power but surpassed it, showing that he could evolve as an athlete while others faded.</p>
-      <img 
-        src="./img/ThorComeback.jpg" 
+      <p class="Paragraph">
+        After slimming down for boxing, many assumed Thor’s strength career was over. Instead, he rebuilt smart: he returned to heavy pulling while keeping conditioning and mobility. By 36, he matched—and then surpassed—his prior power.
+      </p>
+      <img
+        src="./img/ThorComeback.jpg"
         alt="Thor Björnsson back in strongman training"
-        width="50%"
-      >
+        class="img-fluid rounded mx-auto d-block mb-3" />
 
-      <h2>505kg at Eisenhart (July 2025)</h2>
-      <p class="Paragraph">On July 26, 2025, in Bavaria, Germany, Thor pulled <strong>505kg (1,113 lbs)</strong> at the Eisenhart Strongman event. This lift broke his old 501kg mark and, for the first time, did so in a traditional sanctioned competition. It removed any doubt about the legitimacy of his records and showed he could hit all-time numbers under the same lights and pressure as Eddie.</p>
-      <p class="Paragraph">Here is this incredible Feat <a href="https://www.youtube.com/shorts/1m7ntFJK5E0">Thors 505 Deadlift Video</a></p>
+      <h2>505 kg at Eisenhart (July 2025)</h2>
+      <p class="Paragraph">
+        On July 26, 2025 (Bavaria, Germany), Thor deadlifted <strong>505 kg (1,113 lb)</strong> in a traditional sanctioned competition, removing lingering doubts about record context.
+      </p>
+      <p class="Paragraph">
+        Watch:
+        <a href="https://www.youtube.com/shorts/1m7ntFJK5E0">Thor’s 505 kg Deadlift (video)</a>
+      </p>
 
-      <h2>510kg at Giants Live (September 2025)</h2>
-      <p class="Paragraph">Only eight weeks later, Thor went to Birmingham for the Giants Live Mutant World Deadlift Championships. On September 6, 2025, he pulled <strong>510kg (1,124 lbs)</strong>, the heaviest deadlift ever completed. Unlike Eddie’s 500kg attempt, which left him unconscious and injured, Thor’s lift looked smooth. Even more impressively, he went on to <strong>win the entire strongman contest</strong> the same day.</p>
-      <p class="Paragraph">Here is the video of the 510kg deadlift skip to 5:15 <a href="https://www.youtube.com/watch?v=Dri4AFlYzdk">Thors 510 Pull Video</a></p>
-      
-      <section id="comeback_accomplishments_section">
+      <h2>510 kg at Giants Live (September 2025)</h2>
+      <p class="Paragraph">
+        Eight weeks later (Sept 6, 2025, Birmingham), Thor pulled <strong>510 kg (1,124 lb)</strong>—the heaviest deadlift ever—and still won the contest that day.
+      </p>
+      <p class="Paragraph">
+        Watch (skip to 5:15):
+        <a href="https://www.youtube.com/watch?v=Dri4AFlYzdk">Thor’s 510 kg Pull (video)</a>
+      </p>
+
+      <!-- Achievement list framed in a neutral panel (bg-panel) with a custom dark gradient list -->
+      <section id="comeback_accomplishments_section" class="p-3 rounded bg-panel">
         <h2>Eddie vs Thor Deadlift Accomplishments</h2>
-        <ul class="Achievemnts_List" id="comeback_accomplishments_list">
-          <li><strong>Eddie Hall:</strong> First man ever to deadlift 500kg in competition (2016). Did it in front of thousands with maximum pressure. Paid a heavy price with his health but made history.</li>
-          <li><strong>Hafthor Björnsson:</strong> Broke Eddie’s record with 501kg in 2020. Extended it to 505kg in July 2025 and then 510kg in September 2025, while still winning full strongman contests at age 36.</li>
+        <ul class="achievements-list" id="comeback_accomplishments_list">
+          <li><strong>Eddie Hall:</strong> First man to deadlift 500 kg in competition (2016). Arena pressure, historic cost—but history made.</li>
+          <li><strong>Hafthor Björnsson:</strong> 501 kg (2020), 505 kg (July 2025), 510 kg (Sept 2025)—and won full contests while doing it.</li>
         </ul>
       </section>
 
-      <section id="comeback_conclusion_section">
+      <!-- Another neutral panel for the conclusion paragraph -->
+      <section id="comeback_conclusion_section" class="p-3 rounded bg-panel">
         <h2>Conclusion: Two Legacies</h2>
-        <p class="Paragraph">Eddie Hall will always be remembered as the pioneer who proved the impossible could be done. Thor Björnsson will be remembered as the man who took it further, repeatedly, and made the world record his own. Their rivalry pushed each other beyond limits, raised the ceiling for human strength, and turned a niche sport into a worldwide spectacle.</p>
+        <p class="Paragraph">
+          Eddie proved the “impossible” could be done. Thor took it further—again and again—and made the record his own.
+        </p>
       </section>
 
-      <section id="comeback_comparison_section">
-        <h2>Direct Comparison, Who do you think was stronger?</h2>
-        <ul class="Comparison_List" id="comeback_comparison_list">
-          <li>Eddie: First man to 500kg, in competition, against all odds.</li>
-          <li>Eddie: Sacrificed his body for the lift and nearly passed out.</li>
-          <li>Thor: Took the record beyond with 501, 505, and 510kg.</li>
-          <li>Thor: Made record lifts look smooth and still won contests the same day.</li>
-        </ul>
+      <!-- Direct Comparison reformatted into two card columns (very readable on desktop, stack on mobile) -->
+      <section id="comeback_comparison_section" class="my-4">
+        <h2 class="text-center mb-3">Direct Comparison</h2>
 
-        <h3>Where We Are in the Story</h3>
-        <ol class="Comparison_List" id="comeback_progress_list">
-          <li>Thor’s comeback after boxing</li>
-          <li>505kg at Eisenhart (July 2025)</li>
-          <li>510kg at Giants Live (Sept 2025)</li>
-          <li>Eddie vs Thor accomplishments</li>
-          <li>Conclusion: two legacies</li>
-          <li>Direct comparison & final question</li>
+        <!-- Bootstrap grid: two columns on md+, stacking on sm -->
+        <div class="row g-4">
+          <div class="col-md-6">
+            <!-- Card 1: Eddie -->
+            <div class="card h-100 shadow-sm">
+              <div class="card-header bg-contrast fw-semibold">Eddie Hall</div>
+              <div class="card-body">
+                <!-- Use list-unstyled for tighter, cleaner bullets in cards -->
+                <ul class="comparison-list list-unstyled mb-0">
+                  <li>First man to 500 kg—in competition—against all odds.</li>
+                  <li>Sacrificed his body for the lift; nearly passed out.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!-- Card 2: Thor -->
+            <div class="card h-100 shadow-sm">
+              <div class="card-header bg-contrast fw-semibold">Hafthor Björnsson</div>
+              <div class="card-body">
+                <ul class="comparison-list list-unstyled mb-0">
+                  <li>Took the record beyond: 501, 505, and 510 kg.</li>
+                  <li>Made record lifts look smooth and still won same-day contests.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ordered progress list uses Bootstrap list-group for quick, consistent styling -->
+        <h3 class="text-center mt-4">Where We Are in the Story</h3>
+        <ol class="progress-list list-group list-group-numbered list-group-flush mx-auto" style="max-width: 640px;">
+          <li class="list-group-item">Thor’s comeback after boxing</li>
+          <li class="list-group-item">505 kg at Eisenhart (July 2025)</li>
+          <li class="list-group-item">510 kg at Giants Live (Sept 2025)</li>
+          <li class="list-group-item">Eddie vs Thor accomplishments</li>
+          <li class="list-group-item">Conclusion: two legacies</li>
+          <li class="list-group-item">Direct comparison & final question</li>
         </ol>
       </section>
     </main>
 
-    <footer id="comeback_footer" class="mt-5">
-      <!-- Navigation links to other pages -->
-      <nav class="d-flex justify-content-center gap-4 mb-4">
+    <!-- Footer mirrors other pages for consistent UX -->
+    <footer id="comeback_footer" class="mt-5 py-3">
+      <nav class="d-flex justify-content-center gap-3">
         <a href="./index.html" class="btn btn-primary">Page 1</a>
-        <a href="./page2.html" class="btn btn-primary">Page 2</a>
+        <a href="./page2.html" class="btn btn-outline-primary">Page 2</a>
       </nav>
     </footer>
   </div>

@@ -1,83 +1,94 @@
 <!DOCTYPE html>
-<!-- opening html -->
-<html>
+<html lang="en"> <!-- Important for a11y/SEO -->
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Mobile-friendly -->
   <title>The Heaviest Boxing Match in History</title>
 
-  <!-- Bootstrap 5.3.8 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous"
-  />
-
-  <!-- Your custom styles (loads after Bootstrap so I can override) -->
+  <!-- Bootstrap + site styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">
-
-
-  <!-- tiny blank favicon to silence 404 -->
   <link rel="icon" href="data:,">
 </head>
 <body>
   <div class="container mt-4">
-    <main id="boxing_main">
-      <header id="deadlift_header"
-            class="position-relative d-flex justify-content-center align-items-center py-3 ps-5 pe-5">
-          <a href="./index.html"
-            class="btn btn-dark text-white position-absolute top-0 start-0 mt-2 ms-3 px-3 py-2"
-            aria-label="Go to homepage">Home</a>
+    <main id="boxing_main"> <!-- Page-scoped ID used for a tight panel style -->
+      <header id="boxing_header"
+              class="position-relative d-flex justify-content-center align-items-center py-3 ps-5 pe-5">
+        <!-- Persistent site nav button -->
+        <a href="./index.html"
+           class="btn btn-dark text-white position-absolute top-0 start-0 mt-2 ms-3 px-3 py-2"
+           aria-label="Go to homepage">Home</a>
 
-          <h1 class="my-0 text-center">
-            Eddie Hall vs Hafthor Björnsson — The Boxing Chapter
-          </h1>
+        <h1 class="my-0 text-center">
+          Eddie Hall vs Hafthor Björnsson — The Boxing Chapter
+        </h1>
       </header>
 
-      <!-- Section describing the feud escalation and fight announcement -->
+      <!-- Narrative sections (kept intact) -->
       <h2>Feud Escalates & Fight Announced</h2>
-      <p class="Paragraph">After Thor’s 501kg deadlift in 2020, the debate over legitimacy ignited. Eddie maintained that Thor’s lift, done outside a traditional strongman arena during lockdowns, wasn’t equivalent to a Giants Live show. Thor countered that it was fully officiated and calibrated. The back-and-forth escalated until the rivals agreed to settle it in the ring in 2021—billed as <em>The Heaviest Boxing Match in History</em>.</p>
+      <p class="Paragraph">
+        After Thor’s 501 kg deadlift in 2020, debate over legitimacy ignited. Eddie said a home-gym broadcast wasn’t equivalent to a Giants Live arena; Thor countered it was fully officiated and calibrated.
+        The rivals agreed to settle it in the ring in 2021—billed as <em>The Heaviest Boxing Match in History</em>.
+      </p>
 
       <h2>Thor’s Weight-Loss & Boxing Transformation</h2>
-      <p class="Paragraph">To prepare for boxing, Thor and Eddie reinvented their eating and training. Thor dropped over 100 pounds from his peak strongman mass, overhauling his diet and adding roadwork, pad work, sparring, and dedicated mobility and conditioning sessions. The goal: keep enough power to hurt, but move like a boxer—better footwork, a long jab, and sharper timing. The transformation left him lighter, quicker, and far more conditioned while retaining elite strength.</p>
+      <p class="Paragraph">
+        Both athletes overhauled training and nutrition. Thor dropped 100+ lb from his strongman peak, emphasizing conditioning, footwork, and timing while retaining power.
+      </p>
 
-      <img 
-        src="./img/EddieWeight.webp" 
-        alt="Eddie Hall weight loss before the fight"
-        width="40%" 
-        style="display:inline-block;"
-      >
-      <img 
-        src="./img/ThorWeight.jpg" 
-        alt="Thor Björnsson weight loss before the fight"
-        width="40%" 
-        style="display:inline-block;"
-      >
+      <!-- Two responsive images with max-width guard; no fixed widths so they scale gracefully -->
+      <div class="d-flex flex-wrap gap-3 justify-content-center my-2">
+        <img src="./img/EddieWeight.webp"
+             alt="Eddie Hall weight loss before the fight"
+             class="img-fluid rounded" style="max-width:480px;">
+        <img src="./img/ThorWeight.jpg"
+             alt="Thor Björnsson weight loss before the fight"
+             class="img-fluid rounded" style="max-width:480px;">
+      </div>
 
       <h2>Injury Delay & Reschedule</h2>
-      <p class="Paragraph">The original 2021 date was scrapped after Eddie suffered a biceps tear in training that required surgery. The bout was postponed to March 19, 2022, giving both men more time to adapt to the demands of boxing and turning the grudge into a two-year buildup.</p>
-      <img 
-        src="./img/EddieBicep.webp" 
-        alt="Eddie Hall weight loss before the fight"
-        width="40%" 
-      >
+      <p class="Paragraph">
+        Eddie suffered a biceps tear, postponing the fight to March 19, 2022.
+      </p>
+
+      <!-- Single responsive image centered -->
+      <img src="./img/EddieBicep.webp"
+           alt="Eddie Hall biceps injury and recovery"
+           class="img-fluid rounded mx-auto d-block mb-3" />
 
       <h2>Fight Week: Press Conference & Weigh-In</h2>
-      <p class="Paragraph">Fight week in Dubai was tense. The press conference and face-off were heated, highlighting years of rivalry and social-media jabs. At the official weigh-in, Thor came in around 152 kg (~335 lb) at 6′9″, and Eddie at ~142 kg (~313.5 lb) at 6′2″. The exhibition was set for six two-minute rounds—shorter than standard pro heavyweight rounds, but still a real test of skill, conditioning, and composure.</p>
+      <p class="Paragraph">
+        The Dubai face-off was tense. Thor weighed ~152 kg (~335 lb) at 6′9″; Eddie ~142 kg (~313.5 lb) at 6′2″. The exhibition was six two-minute rounds.
+      </p>
 
       <h2>Fight Night: Round-by-Round Highlights</h2>
-      <p class="Paragraph">From the opening bell, Eddie pressed forward with looping power shots, looking for a home-run punch. Thor stayed composed, controlled distance with the jab, and punished entries. Momentum swung firmly to Thor after early exchanges, and he scored two knockdowns—one in the middle rounds and another late—by timing counters as Eddie’s guard dropped. Thor’s reach, footwork, and measured pace wore Eddie down as the rounds piled up.</p>
+      <p class="Paragraph">
+        Eddie pressed forward with looping power shots; Thor controlled distance with a long jab and counters, scoring two knockdowns.
+      </p>
 
-      <p class="Paragraph">To watch the press conference follow this link LANGUAGE WARNING <a href="https://www.youtube.com/watch?v=AHpTpK6RjhI">Press Conference</a></p>
+      <!-- External links with clear labels -->
+      <p class="Paragraph">
+        Watch the press conference (language warning):
+        <a href="https://www.youtube.com/watch?v=AHpTpK6RjhI">Press Conference</a>
+      </p>
 
       <h2>Result & Immediate Aftermath</h2>
-      <p class="Paragraph">After six rounds, Thor won by unanimous decision. The scorecards reflected clear control behind the jab, cleaner counters, and two knockdowns. Eddie showed grit and heart crossing into a new sport; Thor proved he could shift disciplines, outbox a fierce rival, and settle the score outside of strongman. The result also flipped public perception of the rivalry: Thor now had the deadlift record and the head-to-head win.</p>
+      <p class="Paragraph">
+        Thor won by unanimous decision—cleaner counters, better control, two knockdowns.
+      </p>
 
-      <p class="Paragraph">Here are the Fight Highlights <a href="https://www.youtube.com/watch?v=bhqMChxhW4o">Fight Highlights Video</a></p>
+      <p class="Paragraph">
+        Highlights:
+        <a href="https://www.youtube.com/watch?v=bhqMChxhW4o">Fight Highlights Video</a>
+      </p>
 
+      <!-- Recap panel uses soft border + neutral panel background (see .bg-panel) -->
       <h3>Where We Are in the Story</h3>
-      <section id="boxing_recap_section">
+      <section id="boxing_recap_section" class="p-3 rounded bg-panel">
         <ul class="list" id="boxing_recap_list">
           <li>Feud escalates and fight is announced</li>
           <li>Thor’s weight-loss & boxing transformation</li>
@@ -91,14 +102,13 @@
       <p class="Paragraph">Next up: Thor’s comeback in strongman and the all-time deadlift records.</p>
     </main>
 
-    <footer id="boxing_footer" class="mt-5">
-      <!-- Navigation links to other pages -->
-      <nav class="d-flex justify-content-center gap-4 mb-4">
+    <!-- Consistent footer nav -->
+    <footer id="boxing_footer" class="mt-5 py-3">
+      <nav class="d-flex justify-content-center gap-3">
         <a href="./index.html" class="btn btn-primary">Page 1</a>
-        <a href="./page3.html" class="btn btn-primary">Page 3</a>
+        <a href="./page3.html" class="btn btn-outline-primary">Page 3</a>
       </nav>
     </footer>
   </div>
 </body>
-
 </html>
