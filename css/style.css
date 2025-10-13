@@ -313,3 +313,47 @@ img {
   outline-offset: 2px;
 }
 */
+
+/* ==================== Mobile header fix: stop overlap, improve fit ==================== */
+@media (max-width: 600px) {
+  /* Tighter header padding on small screens */
+  #deadlift_header,
+  #boxing_header,
+  #comeback_header {
+    padding: .75rem 1rem !important;
+  }
+
+  /* Make the Home button stop being absolutely positioned on phones.
+     It stacks above the title, aligns left, and is smaller. */
+  #deadlift_header > a,
+  #boxing_header > a,
+  #comeback_header > a {
+    position: static !important;     /* undo position-absolute */
+    margin: 0 0 .5rem 0 !important;  /* put some space below the button */
+    padding: .25rem .5rem !important;/* smaller tap target but still usable */
+    font-size: .875rem !important;   /* ~14px */
+    line-height: 1.1;
+  }
+
+  /* Scale the big H1 down on phones and tighten line-height */
+  #deadlift_header h1,
+  #boxing_header h1,
+  #comeback_header h1 {
+    font-size: clamp(1.05rem, 5.2vw, 1.5rem) !important; /* responsive cap */
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    word-break: keep-all;
+  }
+
+  /* Optional: nudge overall text size a hair smaller on phones */
+  body {
+    font-size: 15px;
+  }
+
+  /* Optional: reduce top margin so content appears sooner on small screens */
+  .container.mt-4 {
+    margin-top: 1rem !important;
+  }
+}
